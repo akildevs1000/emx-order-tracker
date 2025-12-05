@@ -64,6 +64,7 @@ app.get('/track/:awbNumber', async (req, res) => {
     try {
         const browser = await puppeteer.launch({
             headless: true,
+            executablePath: '/snap/bin/chromium', // use snap-installed Chromium
             args: ['--no-sandbox', '--disable-setuid-sandbox']
         });
 
